@@ -8,6 +8,7 @@ import java.time.Instant;
 @Entity
 @Table(name = "tb_tweets")
 public class Tweet {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "tweet_id")
@@ -16,9 +17,11 @@ public class Tweet {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
     private String content;
+
     @CreationTimestamp
-    private Instant creationTimesTamp;
+    private Instant creationTimestamp;
 
     public Long getTweetId() {
         return tweetId;
@@ -44,11 +47,11 @@ public class Tweet {
         this.content = content;
     }
 
-    public Instant getCreationTimesTamp() {
-        return creationTimesTamp;
+    public Instant getCreationTimestamp() {
+        return creationTimestamp;
     }
 
-    public void setCreationTimesTamp(Instant creationTimesTamp) {
-        this.creationTimesTamp = creationTimesTamp;
+    public void setCreationTimestamp(Instant creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
     }
 }
